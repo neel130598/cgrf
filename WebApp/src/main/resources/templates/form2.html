@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>WebApp</title>
+	<link th:href="@{/css/styleform2.css}" rel="stylesheet"/>
+</head>
+
+<body>
+	
+	<dev th:if="${successform2}">
+			<h3 style="color: green;" th:text="${successform2}"></h3>
+		</dev>
+		
+		<dev th:if="${errorform2}">
+			<h3 style="color: red;" th:text="${errorform2}"></h3>
+		</dev>
+	
+	<div class="login-container">
+	<form th:action="@{/form2}" th:object="${user}" method="post">
+		<h2>Consumer category-wise distribution of complaints</h2><br>
+		
+		<div class="input-group">
+				<label for="username">1.FY-Quarter 2024-25</label>
+				<select id="1.FY-Quarter" th:field="*{FY_Quarter}" required>
+				<option value="">-- Select Quarter --</option>
+				<option value="Q1">Q1</option>
+				<option value="Q2">Q2</option>
+				<option value="Q3">Q3</option>
+		</select>
+		</div>
+		
+		<div class="input-group">
+				<label for="username">2.Category of Grievance</label>
+				<select id="1.FY-Quarter" th:field="*{Category_of_Grievance}" required>
+				<option value="">-- Choose --</option>
+				<option value="Residential">Residential</option>
+				<option value="Commercial">Commercial</option>
+				<option value="Agricultural">Agricultural</option>
+				<option value="Industrial">Industrial</option>
+				<option value="Others">Others</option>
+				<option value="Total">Total</option>
+	</select>
+	</div>
+		
+		<div class="input-group">
+				 <label for="username">3.Filed (Nos)</label>
+				<input type="number" th:field="*{Filed_Nos}" required><br><br>
+		</div>
+		
+		<div class="input-group">
+					<label for="username">4.Redressed (Nos)</label>
+					<input type="number" th:field="*{Redressed_Nos}" required><br><br>
+		</div>
+		
+		<div class="input-group">
+				<label for="username">5.Pending (Nos)</label>
+				<input type="number" th:field="*{Pending_Nos}" required><br><br>
+		</div>
+		
+		
+				<button type="submit">Submit</button><br><br>
+	</center>
+	
+</form>
+<br><br>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>WebApp</title>
+	<link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+
+<body>
+	
+	<dev th:if="${successMsg}">
+		<h3 style="color: green;" th:text="${successMsg}"></h3>
+	</dev>
+	
+	<dev th:if="${errorMsg}">
+		<h3 style="color: red;" th:text="${errorMsg}"></h3>
+	</dev>
+	
+	<div class="login-container">
+	<form th:action="@{/regForm}" th:object="${user}" method="post">
+		<h2>Registration Page</h2>
+		
+		<div class="input-group">
+			<label for="username">Name:</label>
+			<input type="text" th:field="*{name}"><br><br>
+		</div>
+		
+		<div class="input-group">
+			 <label for="username">Email Id:</label>
+				<input type="text" th:field="*{email}"><br><br>
+		</div>
+		
+		<div class="input-group">
+				<label for="username">Birth Date:</label>
+				<input type="date" th:field="*{date}"><br><br>
+		</div>
+
+		<div class="input-group">
+			<label for="username">Gender:</label>
+			<select id="gender" th:field="*{gender}">
+				<option value="">-- Select Gender --</option>
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+				<option value="other">Other</option>
+			</select>
+		</div>
+		
+		<div class="input-group">
+				<label for="username">Address:</label>
+				<input type="text" th:field="*{address}"><br><br>
+		</div>				
+		
+		<div class="input-group">
+				<label for="username">Phone No.:</label>
+				<input type="text" maxlength="10" th:field="*{phoneno}"><br><br>
+		</div>
+		
+		<div class="input-group">
+				<label for="username">Password:</label>
+				<input type="password" th:field="*{password}"><br><br>
+		</div>
+				
+				
+				
+				<button type="submit">Register</button><br><br>
+	<center>
+	<a href="index.html">Home</a>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="loginPage">Login</a>
+	</center>
+	
+</form>
+<br><br>
+
+
+</div>
+</body>
+
+</html>

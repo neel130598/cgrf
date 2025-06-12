@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>WebApp</title>
+	<link th:href="@{/css/styleform2.css}" rel="stylesheet"/>
+</head>
+
+<body>
+	
+	<dev th:if="${successform4}">
+			<h3 style="color: green;" th:text="${successform4}"></h3>
+		</dev>
+		
+		<dev th:if="${errorform4}">
+			<h3 style="color: red;" th:text="${errorform4}"></h3>
+		</dev>
+	
+	<div class="login-container">
+	<form th:action="@{/form4}" th:object="${user}" method="post">
+		<h2>f. Vacancies and duration of vacancies</h2><br>
+		
+		
+		<div class="input-group">
+				<label for="username">1.FY 2024-25</label>
+				<select id="Quarter" th:field="*{Quarter}" required>
+				<option value="">-- Select Quarter --</option>
+				<option value="Q1">Q1</option>
+				<option value="Q2">Q2</option>
+				<option value="Q3">Q3</option>
+				<option value="Q4">Q4</option>
+				<option value="Q5">Q5</option>
+	</select>
+	</div>
+		
+		<div class="input-group">
+				 <label for="username">2.Vacany</label>
+				<input type="text" th:field="*{Vacany}" required><br><br>
+		</div>
+		
+		<div class="input-group">
+					<label for="username">3.Chairperson</label>
+					<input type="text" th:field="*{Chairperson}" required><br><br>
+		</div>
+		
+		<div class="input-group">
+					<label for="username">4.Member (CPO)</label>
+					<input type="text" th:field="*{Member_cpo}" required><br><br>
+		</div>
+		
+		<div class="input-group">
+					<label for="username">5.Member (Licensee)</label>
+					<input type="text" th:field="*{Member_licensee}" required><br><br>
+		</div>
+				<button type="submit">Submit</button><br><br>
+	</center>
+	
+</form>
+<br><br>
+
+</div>
+</body>
+</html>

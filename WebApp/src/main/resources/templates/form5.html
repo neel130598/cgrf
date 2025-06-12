@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>WebApp</title>
+	<link th:href="@{/css/styleform2.css}" rel="stylesheet"/>
+</head>
+
+<body>
+	
+	<dev th:if="${successform5}">
+			<h3 style="color: green;" th:text="${successform5}"></h3>
+		</dev>
+		
+		<dev th:if="${errorform5}">
+			<h3 style="color: red;" th:text="${errorform5}"></h3>
+		</dev>
+	
+	<div class="login-container">
+	<form th:action="@{/form5}" th:object="${user}" method="post">
+		<h2>Number of Orders appealed against</h2><br>
+		
+		
+		
+		
+		
+		
+		<div class="input-group">
+					<label for="username">1.Number of Orders appealed against</label>
+					<input type="number" th:field="*{Number_of_orders_appealed_against}" required><br><br>
+		</div>
+		
+				<button type="submit">Submit</button><br><br>
+	</center>
+	
+</form>
+<br><br>
+
+</div>
+</body>
+</html>

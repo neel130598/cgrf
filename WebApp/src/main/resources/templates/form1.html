@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>WebApp</title>
+	<link th:href="@{/css/style2.css}" rel="stylesheet"/>
+</head>
+
+<body>
+	
+	<dev th:if="${successform}">
+			<h3 style="color: green;" th:text="${successform}"></h3>
+		</dev>
+		
+		<dev th:if="${errorform}">
+			<h3 style="color: red;" th:text="${errorform}"></h3>
+		</dev>
+	
+	<div class="login-container">
+	<form th:action="@{/form1}" th:object="${user}" method="post">
+		<h2>Name of Distribution Licensee:MSEDCL & Name of CGRF:Total </h2>
+		<h3>I. Summary of greivances redressal during the quarterly report period from April-2024 to June-2024.</h3><br><br>
+		
+		<div class="input-group">
+			<label for="username">1.FY-Quarter</label>
+			<select id="1.FY-Quarter" th:field="*{FY_Quarter}" required>
+					<option value="">-- Select Quarter --</option>
+					<option value="Q1">Q1</option>
+					<option value="Q2">Q2</option>
+					<option value="Q3">Q3</option>
+			</select>
+		</div>
+		
+		<div class="input-group">
+			 <label for="username">2.No. of grievances pending on start date</label>
+				<input type="number" th:field="*{No_of_grievances_pending_on_start_date}" required><br><br>
+		</div>
+		
+		<div class="input-group">
+				<label for="username">3.No. of grievances received during the period</label>
+				<input type="number" th:field="*{No_of_grievances_received_during_the_period}" required><br><br>
+		</div>
+		
+		<div class="input-group">
+				<label for="username">4.Total No. of grievances during the period</label>
+				<input type="number" th:field="*{Total_No_of_grievances_during_the_period}" required><br><br>
+		</div>				
+		
+		<div class="input-group">
+				<label for="username">5.No. of grievances not admitted or withdrawn during the period</label>
+				<input type="number" maxlength="10" th:field="*{No_of_grievances_not_admitted_or_withdrawn_during_the_period}" required><br><br>
+		</div>
+		
+		<div class="input-group">
+				<label for="username">6.Total No. of grievances actionable during the period</label>
+				<input type="number" th:field="*{Total_No_of_grievances_actionable_during_the_period}" required><br><br>
+		</div>
+		
+		<h3>No. of grievances redressed</h3><br><br>
+		<div class="input-group">
+				<label for="username">1.Within 15 working days</label>
+				<input type="number" th:field="*{Within_15_working_days}" required><br><br>
+		</div>
+		
+		<div class="input-group">
+			<label for="username">2.Beyond 15 working days</label>
+			<input type="number" th:field="*{Beyond_15_working_days}" required><br><br>
+		</div>
+		
+		<div class="input-group">
+			<label for="username">3.Within 60 days</label>
+			<input type="number" th:field="*{Within_60_days}" required><br><br>
+		</div>
+		
+		<div class="input-group">
+				<label for="username">4.Beyond 60 days</label>
+				<input type="number" th:field="*{Beyond_60_days}" required><br><br>
+		</div>
+		
+		<div class="input-group">
+				<label for="username">5.Total No. of grievances redressed during the period</label>
+				<input type="number" th:field="*{Total_No_of_grievances_redressed_during_the_period}" required><br><br>
+		</div>
+		
+		<div class="input-group">
+				<label for="username">6.Total No. of grievances pending at end the period</label>
+				<input type="number" th:field="*{Total_No_of_grievances_pending_at_end_the_period}" required><br><br>
+		</div>
+		
+		<div class="input-group">
+					<label for="username">7.No. of decisions in favour of Consumer</label>
+					<input type="number" th:field="*{No_of_decisions_in_favour_of_Consumer}" required><br><br>
+		</div>
+		
+		<div class="input-group">
+					<label for="username">8.No. of decisions in favour of Licensee</label>
+					<input type="number" th:field="*{No_of_decisions_in_favour_of_Licensee}" required><br><br>
+		</div>
+		
+		<div class="input-group">
+				<label for="username">9.No. of orders requiring compliance report by licensee</label>
+				<input type="number" th:field="*{No_of_orders_requiring_compliance_report_by_licensee}" required><br><br>
+		</div>
+		
+		<div class="input-group">
+				<label for="username">10.No. of orders providing payments of compensation by Licensee to Complainant</label>
+				<input type="number" th:field="*{No_of_ord_pro_pays_of_compensation_by_License_Compl}" required><br><br>
+		</div>
+		
+		<h3>Status of compliance by Licensee (No. of. Orders)</h3><br>
+		<div class="input-group">
+					<label for="username">1.Reports received within period as per order</label>
+					<input type="number" th:field="*{Reports_received_within_period_as_per_order}" required><br><br>
+		</div>
+
+		<div class="input-group">
+					<label for="username">2.Reports received beyond specified period in the order</label>
+					<input type="number" th:field="*{Reports_received_beyond_specified_period_in_the_order}" required><br><br>
+		</div>
+						
+		<div class="input-group">
+					<label for="username">3.Not Complied</label>
+					<input type="number" th:field="*{Not_Complied}" required><br><br>
+		</div>
+				
+				
+				<button type="submit">Submit</button><br><br>
+	</center>
+	
+</form>
+<br><br>
+
+
+</div>
+</body>
+
+</html>

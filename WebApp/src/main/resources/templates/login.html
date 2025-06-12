@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>WebApp</title>
+	<link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+
+<body>
+
+	
+	
+	<dev th:if="${errorMsg}">
+		<h3 style="color: red;" th:text="${errorMsg}"></h3>
+	</dev>
+	<div class="login-container">
+		
+	<form th:action="@{/loginForm}" th:object="${user}" method="post">
+		
+		<h2>Login Page</h2>
+		
+		<div class="input-group">
+		<label for="username">Email Id:</label>
+		<input type="text" th:field="*{email}"><br><br>
+		</div>
+		
+		<div class="input-group">
+		<label for="password">Password:</label>
+		<input type="password" th:field="*{password}"><br><br>
+		</div>
+		<button type="submit">Login</button><br><br>
+		
+		
+		<center>
+		<a href="index.html">Home</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="regPage">register</a>
+		</center>
+</form>
+</div>
+
+
+
+</body>
+
+</html>

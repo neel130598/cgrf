@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>WebApp</title>
+	<link th:href="@{/css/styleform2.css}" rel="stylesheet"/>
+</head>
+
+<body>
+	
+	<dev th:if="${successform3}">
+			<h3 style="color: green;" th:text="${successform3}"></h3>
+		</dev>
+		
+		<dev th:if="${errorform3}">
+			<h3 style="color: red;" th:text="${errorform3}"></h3>
+		</dev>
+	
+	<div class="login-container">
+	<form th:action="@{/form3}" th:object="${user}" method="post">
+		<h2>Consumer category-wise compensation awarded</h2><br>
+		
+		
+		<div class="input-group">
+				<label for="username">1.Category of Grievance</label>
+				<select id="1.FY-Quarter" th:field="*{Category_of_Grievance}" required>
+				<option value="">-- Choose --</option>
+				<option value="Residential">Residential</option>
+				<option value="Commercial">Commercial</option>
+				<option value="Agricultural">Agricultural</option>
+				<option value="Industrial">Industrial</option>
+				<option value="Others">Others</option>
+				<option value="Total">Total</option>
+	</select>
+	</div>
+		
+		<div class="input-group">
+				 <label for="username">2.No of Cases Redresed</label>
+				<input type="number" th:field="*{No_of_Cases_Redresed}" required><br><br>
+		</div>
+		
+		<div class="input-group">
+					<label for="username">3.Amount compensation awarded in Rs.</label>
+					<input type="number" th:field="*{Amount_compensation_awarded_in_Rs}" required><br><br>
+		
+		
+				<button type="submit">Submit</button><br><br>
+	</center>
+	
+</form>
+<br><br>
+
+</div>
+</body>
+</html>

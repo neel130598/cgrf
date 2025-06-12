@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Two Column Link Buttons</title>
+  <link th:href="@{/css/styleprofile.css}" rel="stylesheet"/>
+</head>
+<body>
+  <div class="button-grid">
+	<h2>Welcome: <span th:text="${modelName}"></span></h2><br>
+	
+	<a th:href="submitform1" class="btn">Form-1 Summary of greivances redressal during the quarterly report period from April-2024 to June-2024.</a>
+	<a href="submitform2" class="btn">Form-2 Consumer category-wise distribution of complaints</a>
+	<a href="submitform3" class="btn">Form-3 Consumer category-wise compensation awarded</a>
+	<a href="submitform4" class="btn">Form-4 Vacancies and duration of vacancies</a>
+	<a href="submitform5" class="btn">Form-5 Number of Orders appealed against</a>
+	<a th:href="@{/logout}" class="btn">Logout</a>
+    
+
+    <a href="#" class="btn">Services</a>
+    <a href="#" class="btn">Contact</a>
+    <a href="#" class="btn">Register</a>
+    <a href="#" class="btn">Login</a>
+  </div>
+</body>
+</html>
